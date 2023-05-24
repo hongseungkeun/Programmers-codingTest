@@ -1,4 +1,4 @@
-package programmers;
+package Lv1;
 
 /**
  *  프로그래머스 : 음양 더하기
