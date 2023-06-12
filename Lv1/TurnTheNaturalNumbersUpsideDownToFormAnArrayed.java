@@ -16,6 +16,7 @@ import java.util.*;
  *  - 조금의 성능을 위해 스트링을 이어 붙히는게 아닌 StringBuilder를 사용하자
  *  - 찾아보니 단 한 줄로 만든 분이 계셔서 코드를 가져와 보았다
  *      - new StringBuilder().append(n).reverse().chars().map(Character::getNumericValue).toArray()
+ *      - 속도는 기존 코드가 0.2초, 위 코드는 5초 이내로 좋지 않다
  */
 
 public class TurnTheNaturalNumbersUpsideDownToFormAnArrayed {
