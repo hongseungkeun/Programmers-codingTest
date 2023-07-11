@@ -17,11 +17,17 @@ import java.util.Collections;
 
 public class PlaceStringDescendingOrder {
     public String solution(String s) {
-        String answer = "";
+        String answer;
         String[] strings = s.split("");
         Arrays.sort(strings, Collections.reverseOrder());
         answer = String.join("", strings);
 
         return answer;
+    }
+
+    public static void main(String[] args) {
+        String s = "Zbcdefg";
+        PlaceStringDescendingOrder placeStringDescendingOrder = new PlaceStringDescendingOrder();
+        System.out.println(placeStringDescendingOrder.solution(s));
     }
 }
