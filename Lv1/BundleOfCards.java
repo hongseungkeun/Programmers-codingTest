@@ -24,7 +24,7 @@ public class BundleOfCards {
         YES("Yes"),
         NO("No");
 
-        private String result;
+        private final String result;
 
         Result(String result){
             this.result = result;
@@ -34,12 +34,12 @@ public class BundleOfCards {
     public String solution(String[] cards1, String[] cards2, String[] goal) {
         int checkCards1 = 0, checkCards2 = 0;
 
-        for (int i = 0; i < goal.length; i++) {
-            if(cards1.length > checkCards1 && cards1[checkCards1].equals(goal[i])){
+        for (String s : goal) {
+            if (cards1.length > checkCards1 && cards1[checkCards1].equals(s)) {
                 checkCards1++;
-            } else if (cards2.length > checkCards2 && cards2[checkCards2].equals(goal[i])) {
+            } else if (cards2.length > checkCards2 && cards2[checkCards2].equals(s)) {
                 checkCards2++;
-            }else {
+            } else {
                 return Result.NO.result;
             }
         }
@@ -47,9 +47,6 @@ public class BundleOfCards {
     }
 
     public static void main(String[] args) {
-//        String[] cards1 = {"i", "drink", "water"};
-//        String[] cards2 = {"want", "to"};
-//        String[] goal = {"i", "want", "to", "drink", "water"};
         String[] cards1 = {"i", "water", "drink"};
         String[] cards2 = {"want", "to"};
         String[] goal = {"i", "want", "to", "drink", "water"};
