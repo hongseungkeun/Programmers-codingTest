@@ -24,7 +24,7 @@ public class EvenAndOddNumbers {
         ODD("Odd"),
         EVEN("Even");
 
-        public String value;
+        public final String value;
 
         Num(String value){
             this.value = value;
