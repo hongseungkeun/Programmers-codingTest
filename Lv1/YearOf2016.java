@@ -22,11 +22,11 @@ import java.time.LocalDate;
  */
 
 public class YearOf2016 {
-    private final int YEAR = 2016;
-    private final int BEGIN_INDEX = 0;
-    private final int END_INDEX = 3;
 
     public String solution(int a, int b) {
+        int YEAR = 2016;
+        int BEGIN_INDEX = 0;
+        int END_INDEX = 3;
         LocalDate date = LocalDate.of(YEAR, a, b);
         return date.getDayOfWeek().name().substring(BEGIN_INDEX, END_INDEX);
     }
