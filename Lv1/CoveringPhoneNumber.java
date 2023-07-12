@@ -15,15 +15,13 @@ package Lv1;
 
 public class CoveringPhoneNumber {
     public String solution(String phone_number) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         String[] phoneNum = phone_number.split("");
         int phoneNumLength = phoneNum.length;
 
         String LastFourNum = phone_number.substring(phoneNumLength - 4, phoneNumLength);
 
-        for (int i = 0; i < phoneNumLength-4; i++) {
-            answer += "*";
-        }
+        answer.append("*".repeat(Math.max(0, phoneNumLength - 4)));
 
         return answer + LastFourNum;
     }
