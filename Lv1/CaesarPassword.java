@@ -37,29 +37,25 @@ public class CaesarPassword {
 
         for (int i = 0; i < sArr.length; i++) {
             if(upper.contains(s.charAt(i))){
-                int position = upper.indexOf(s.charAt(i));
-                for (int j = 0; j < n; j++) {
-                    if(position == upper.size() - 1){
-                        position = 0;
-                    }else{
-                        position++;
-                    }
-                }
-                sArr[i] = String.valueOf(upper.get(position));
+                pushString(s, n, sArr, upper, i);
             } else if (lower.contains(s.charAt(i))){
-                int position = lower.indexOf(s.charAt(i));
-                for (int j = 0; j < n; j++) {
-                    if(position == lower.size() - 1){
-                        position = 0;
-                    }else{
-                        position += 1;
-                    }
-                }
-                sArr[i] = String.valueOf(lower.get(position));
+                pushString(s, n, sArr, lower, i);
             }
         }
 
         return String.join("", sArr);
+    }
+
+    private static void pushString(String s, int n, String[] sArr, List<Character> charArr, int i) {
+        int position = charArr.indexOf(s.charAt(i));
+        for (int j = 0; j < n; j++) {
+            if(position == charArr.size() - 1){
+                position = 0;
+            }else{
+                position++;
+            }
+        }
+        sArr[i] = String.valueOf(charArr.get(position));
     }
 
     public static void main(String[] args) {
