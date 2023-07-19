@@ -35,16 +35,15 @@ public class ReceiveReportResults {
             map.put(id, reportList);
         }
 
-        for (int i = 0; i < report.length; i++) {
-            String[] reportArray = report[i].split("\\s");
+        for (String s : report) {
+            String[] reportArray = s.split("\\s");
             map.get(reportArray[1]).add(reportArray[0]);
         }
 
         for (Map.Entry<String, Set<String>> entry : map.entrySet()) {
             if(k <= entry.getValue().size()){
-                Iterator<String> value = entry.getValue().iterator();
-                while(value.hasNext()){
-                    answer[Arrays.asList(id_list).indexOf(value.next())]++;
+                for (String value : entry.getValue()) {
+                    answer[Arrays.asList(id_list).indexOf(value)]++;
                 }
             }
         }
