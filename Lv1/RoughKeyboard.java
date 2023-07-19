@@ -26,13 +26,13 @@ public class RoughKeyboard {
         int[] answer = new int[targets.length];
         Map<String, Integer> locationOfKey = new HashMap<>();
 
-        for (int i = 0; i < keymap.length; i++) {
-            String[] split = keymap[i].split("");
+        for (String key : keymap) {
+            String[] split = key.split("");
             for (int j = 0; j < split.length; j++) {
-                if(!locationOfKey.containsKey(split[j])){
+                if (!locationOfKey.containsKey(split[j])) {
                     locationOfKey.put(split[j], j + 1);
-                }else{
-                    if(j < locationOfKey.get(split[j])){
+                } else {
+                    if (j < locationOfKey.get(split[j])) {
                         locationOfKey.put(split[j], j + 1);
                     }
                 }
