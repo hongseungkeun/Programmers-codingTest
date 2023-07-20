@@ -14,7 +14,6 @@ import java.util.Arrays;
  */
 public class MinimumRectangle {
     public int solution(int[][] sizes) {
-        int answer = 0;
         int width = 0;
         int vertical = 0;
         for (int[] size : sizes){
@@ -26,7 +25,7 @@ public class MinimumRectangle {
                 vertical = size[1];
             }
         }
-        return answer = width * vertical;
+        return width * vertical;
     }
 
     public static void main(String[] args) {
