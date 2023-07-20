@@ -31,11 +31,11 @@ public class MemoryScore {
             memory.put(name[i], yearning[i]);
         }
 
-        for (int i = 0; i < photo.length; i++) {
+        for (String[] photos : photo) {
             int score = 0;
-            for (int j = 0; j < photo[i].length; j++) {
-                if(memory.containsKey(photo[i][j])) {
-                    score += memory.get(photo[i][j]);
+            for (String p : photos) {
+                if (memory.containsKey(p)) {
+                    score += memory.get(p);
                 }
             }
             list.add(score);
