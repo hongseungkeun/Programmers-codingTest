@@ -45,41 +45,41 @@ public class WalkInThePark {
         }
         currentLocation = Arrays.copyOf(locationOfS, locationOfS.length);
 
-        for (int i = 0; i < routes.length; i++) {
-            String[] routeSplit = routes[i].split("\\s");
+        for (String route : routes) {
+            String[] routeSplit = route.split("\\s");
             boolean flag = false;
             for (int j = 0; j < Integer.parseInt(routeSplit[1]); j++) {
-                switch (routeSplit[0]){
-                    case "E":
+                switch (routeSplit[0]) {
+                    case "E" -> {
                         currentLocation[1] += 1;
-                        if(lastRightPosition < currentLocation[1] || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")){
+                        if (lastRightPosition < currentLocation[1] || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")) {
                             flag = true;
                         }
-                        break;
-                    case "N":
+                    }
+                    case "N" -> {
                         currentLocation[0] -= 1;
-                        if(currentLocation[0] < 0 || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")){
+                        if (currentLocation[0] < 0 || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")) {
                             flag = true;
                         }
-                        break;
-                    case "S":
+                    }
+                    case "S" -> {
                         currentLocation[0] += 1;
-                        if(lastBottomPosition < currentLocation[0] || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")){
+                        if (lastBottomPosition < currentLocation[0] || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")) {
                             flag = true;
                         }
-                        break;
-                    case "W":
+                    }
+                    case "W" -> {
                         currentLocation[1] -= 1;
-                        if(currentLocation[1] < 0 || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")){
+                        if (currentLocation[1] < 0 || parkBoard[currentLocation[0]][currentLocation[1]].equals("X")) {
                             flag = true;
                         }
-                        break;
+                    }
                 }
             }
-            if(flag){
+            if (flag) {
                 currentLocation = Arrays.copyOf(locationOfS, locationOfS.length);
-            }else{
-                locationOfS =  Arrays.copyOf(currentLocation, currentLocation.length);
+            } else {
+                locationOfS = Arrays.copyOf(currentLocation, currentLocation.length);
             }
         }
 
