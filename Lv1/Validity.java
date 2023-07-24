@@ -15,7 +15,6 @@ public class Validity {
     public int[] solution(String today, String[] terms, String[] privacies) {
         List<Integer> answer=new ArrayList<>();
         Map<String, Integer> termsMap = new HashMap<>();
-        Map<String, String> privaciesMap = new HashMap<>();
         String[] todaySplit = today.split("\\.");
         int count = 1;
         int todayCnt=Integer.parseInt(todaySplit[0])*12*28+Integer.parseInt(todaySplit[1])*28+Integer.parseInt(todaySplit[2]);
@@ -37,5 +36,13 @@ public class Validity {
         }
 
         return answer.stream().mapToInt(i -> i).toArray();
+    }
+
+    public static void main(String[] args) {
+        String today = "2022.05.19";
+        String[] terms = {"A 6", "B 12", "C 3"};
+        String[] privacies = {"2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"};
+        Validity validity = new Validity();
+        System.out.println(Arrays.toString(validity.solution(today, terms, privacies)));
     }
 }
