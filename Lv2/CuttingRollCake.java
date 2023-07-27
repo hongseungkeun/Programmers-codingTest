@@ -26,19 +26,19 @@ public class CuttingRollCake {
         Map<Integer, Integer> toppings = new HashMap<>();
         Set<Integer> brother = new HashSet<>();
 
-        for (int i = 0; i < topping.length; i++) {
-            toppings.put(topping[i], toppings.getOrDefault(topping[i], 0) + 1);
+        for (int t : topping) {
+            toppings.put(t, toppings.getOrDefault(t, 0) + 1);
         }
 
-        for (int i = 0; i < topping.length; i++) {
-            brother.add(topping[i]);
-            toppings.put(topping[i], toppings.get(topping[i]) - 1);
+        for (int t : topping) {
+            brother.add(t);
+            toppings.put(t, toppings.get(t) - 1);
 
-            if(toppings.get(topping[i]) == 0){
-                toppings.remove(topping[i]);
+            if (toppings.get(t) == 0) {
+                toppings.remove(t);
             }
 
-            if(brother.size() == toppings.size()){
+            if (brother.size() == toppings.size()) {
                 answer++;
             }
         }
