@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class NumberPartner {
     public String solution(String X, String Y) {
-        String answer = "";
+        String answer;
         StringBuilder sb = new StringBuilder();
         Map<Character, Integer> yMap = new HashMap<>();
 
