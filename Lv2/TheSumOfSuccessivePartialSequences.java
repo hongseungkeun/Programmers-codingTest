@@ -65,10 +65,10 @@ public class TheSumOfSuccessivePartialSequences {
         return new int[]{answer.get(0).left,answer.get(0).right};
     }
 
-    private class Sequences{
-        private int left;
-        private int right;
-        private int size;
+    private static class Sequences{
+        private final int left;
+        private final int right;
+        private final int size;
 
         public Sequences(int left, int right){
             this.left = left;
