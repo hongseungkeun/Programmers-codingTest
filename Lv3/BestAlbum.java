@@ -24,7 +24,7 @@ import java.util.*;
  */
 public class BestAlbum {
     public int[] solution(String[] genres, int[] plays) {
-        int[] answer = {};
+        int[] answer;
         Map<String, Integer> maxForGenres = new HashMap<>();
         Map<String, Map<Integer, Integer>> maxForPlays = new HashMap<>();
         List<Integer> answerList = new ArrayList<>();
