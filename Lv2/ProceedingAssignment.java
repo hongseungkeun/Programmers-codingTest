@@ -49,13 +49,13 @@ public class ProceedingAssignment {
         Map<Integer, Integer> playtime = new HashMap<>();
         Stack<Integer> inProgress = new Stack<>();
 
-        for (int i = 0; i < plans.length; i++) {
-            String[] time = plans[i][1].split(":");
+        for (String[] plan : plans) {
+            String[] time = plan[1].split(":");
             int timeToCompare = Integer.parseInt(time[0]) * 60 + Integer.parseInt(time[1]);
 
             times.add(timeToCompare);
-            language.put(timeToCompare, plans[i][0]);
-            playtime.put(timeToCompare, Integer.parseInt(plans[i][2]));
+            language.put(timeToCompare, plan[0]);
+            playtime.put(timeToCompare, Integer.parseInt(plan[2]));
         }
 
         times.sort(Comparator.naturalOrder());
@@ -92,7 +92,7 @@ public class ProceedingAssignment {
             answer.add(language.get(inProgress.pop()));
         }
 
-        return answer.stream().toArray(String[]::new);
+        return answer.toArray(String[]::new);
     }
 
     public static void main(String[] args) {
