@@ -41,22 +41,22 @@ public class MiningMineral {
         int pick = 0;
 
         for (int i = 0; i < minerals.length && 0 < pickCount; i++) {
-            switch(minerals[i])
-            {
-                case "diamond":
+            switch (minerals[i]) {
+                case "diamond" -> {
                     fatigues[i / 5][0] += 1;
                     fatigues[i / 5][1] += 5;
                     fatigues[i / 5][2] += 25;
-                    break;
-                case "iron":
+                }
+                case "iron" -> {
                     fatigues[i / 5][0] += 1;
                     fatigues[i / 5][1] += 1;
                     fatigues[i / 5][2] += 5;
-                    break;
-                case "stone":
+                }
+                case "stone" -> {
                     fatigues[i / 5][0] += 1;
                     fatigues[i / 5][1] += 1;
                     fatigues[i / 5][2] += 1;
+                }
             }
 
             if(i % 5 == 4) {
