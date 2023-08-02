@@ -44,15 +44,9 @@ public class RotateParentheses {
             } else {
                 if (!stack.isEmpty()) {
                     switch (s.charAt(i)) {
-                        case ']':
-                            isErasableParentheses(stack, '[');
-                            break;
-                        case ')':
-                            isErasableParentheses(stack, '(');
-                            break;
-                        case '}':
-                            isErasableParentheses(stack, '{');
-                            break;
+                        case ']' -> isErasableParentheses(stack, '[');
+                        case ')' -> isErasableParentheses(stack, '(');
+                        case '}' -> isErasableParentheses(stack, '{');
                     }
                 } else {
                     return false;
