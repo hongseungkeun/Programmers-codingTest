@@ -1,9 +1,9 @@
 package Lv2;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  *  프로그래머스 : 귤 고르기
@@ -34,9 +34,8 @@ public class PickTangerine {
         for (int tan : tangerine){
             tangerineMap.put(tan,tangerineMap.getOrDefault(tan,0)+1);
         }
-        List<Map.Entry<Integer, Integer>> tangerines = tangerineMap.entrySet()
-                .stream().sorted(Map.Entry.comparingByValue(((o1, o2) -> o2 - o1)))
-                .collect(Collectors.toList());
+        List<Map.Entry<Integer, Integer>> tangerines = new ArrayList<>(tangerineMap.entrySet());
+        tangerines.sort(Map.Entry.comparingByValue(((o1, o2) -> o2 - o1)));
 
         for (Map.Entry<Integer, Integer> entry : tangerines) {
             answer++;
