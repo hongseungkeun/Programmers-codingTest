@@ -26,11 +26,9 @@ public class PaintOver {
     public int solution(int n, int m, int[] section) {
         int answer = 0; // 칠해진 횟수
         int checkPlace = 0; // 최대로 페인트가 칠해진 구역
-        for (int i = 0; i < section.length; i++) {
-            if(section[i] <= checkPlace){   // checkPlace가 section[i]보다 크거나 같다는 것은 이미 칠해져 있다는 것
-                continue;
-            }else{  // 이곳으로 들어왔다면 checkPlace를 최대로 갱신해주고 횟수를 늘려줌
-                checkPlace = section[i] + m - 1;
+        for (int sec : section) {
+            if (checkPlace < sec) {   // checkPlace를 최대로 갱신해주고 횟수를 늘려줌
+                checkPlace = sec + m - 1;
                 answer++;
             }
         }
@@ -39,9 +37,6 @@ public class PaintOver {
     }
 
     public static void main(String[] args) {
-//        int n = 8;
-//        int m = 2;
-//        int[] section = {2, 3, 6};
         int n = 4;
         int m = 1;
         int[] section = {1, 2, 3, 4};
