@@ -23,7 +23,7 @@ import java.util.*;
 
 public class PersonalityType {
     public String solution(String[] survey, int[] choices) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         List<String> surveys = new ArrayList<>(List.of("RT","CF","JM","AN")); // 나중에 검사 결과 반환 비교를 위한 리스트
         Map<String, Integer> map = new HashMap<>(); // 선택지와 선택지 숫자를 넣어줄 map
 
@@ -34,14 +34,13 @@ public class PersonalityType {
             scoringByChoice(map, surveySplit, choice);
         }
 
-        for (int i = 0; i < surveys.size(); i++) {  //  surveys 리스트 반복을 통해 answer 추출
-            String[] surveysSplit = surveys.get(i).split("");
+        for (String s : surveys) {  //  surveys 리스트 반복을 통해 answer 추출
+            String[] surveysSplit = s.split("");
             // 이미 리스트를 반복했을 때 사전 순이므로 왼쪽값이 크거나 같다면 answer와 합침, 왼쪽값이 작다면 오른쪽값을 answer와 합침
-            answer += map.getOrDefault(surveysSplit[0], 0) >= map.getOrDefault(surveysSplit[1], 0) ? surveysSplit[0] : surveysSplit[1];
+            answer.append(map.getOrDefault(surveysSplit[0], 0) >= map.getOrDefault(surveysSplit[1], 0) ? surveysSplit[0] : surveysSplit[1]);
         }
 
-
-        return answer;
+        return answer.toString();
     }
 
     private static void scoringByChoice(Map<String, Integer> map, String[] surveySplit, int choice) {
@@ -70,8 +69,6 @@ public class PersonalityType {
     }
 
     public static void main(String[] args) {
-//        String[] survey = {"AN", "CF", "MJ", "RT", "NA"};
-//        int[] choices = {5, 3, 2, 7, 5};
         String[] survey = {"TR", "RT", "TR"};
         int[] choices = {7, 1, 3};
         PersonalityType personalityType = new PersonalityType();
