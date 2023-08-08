@@ -45,7 +45,7 @@ public class RunningRace {
             answer.add(playerMapOfValue.get(i));
         }
 
-        return answer.toArray(new String[answer.size()]);
+        return answer.toArray(new String[0]);
     }
 
     public static void main(String[] args) {
