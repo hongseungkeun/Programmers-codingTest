@@ -22,7 +22,7 @@ public class SmallSizeSubstring {
         int answer = 0;
         String[] tSplit = t.split("");
         String[] pSplit = p.split("");
-        Long LongP = Long.parseLong(p);
+        long LongP = Long.parseLong(p);
 
         for (int i = 0; i < tSplit.length - pSplit.length + 1; i++) {
             if(Long.parseLong(t.substring(i, i + pSplit.length)) <= LongP){
@@ -34,8 +34,6 @@ public class SmallSizeSubstring {
     }
 
     public static void main(String[] args) {
-//        String t = "3141592";
-//        String p = "271";
         String t = "500220839878";
         String p = "500220839";
         SmallSizeSubstring smallSizeSubstring = new SmallSizeSubstring();
