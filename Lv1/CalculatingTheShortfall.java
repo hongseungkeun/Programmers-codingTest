@@ -25,11 +25,11 @@ package Lv1;
 
 public class CalculatingTheShortfall {
     public long solution(int price, int money, int count) {
-        long answer = -1;
+        long answer;
         long prices = 0;
 
         for (int i = 1; i <= count; i++) {
-            prices += price*i;
+            prices += (long) price * i;
         }
 
         if(prices <= money){
