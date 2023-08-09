@@ -18,7 +18,7 @@ package Lv1;
 
 public class TernaryFlip {
     public int solution(int n) {
-        StringBuffer sb = new StringBuffer(Integer.toString(n, 3));
+        StringBuilder sb = new StringBuilder(Integer.toString(n, 3));
 
         return Integer.parseInt(sb.reverse().toString(), 3);
     }
