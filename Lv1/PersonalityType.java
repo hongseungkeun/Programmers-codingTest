@@ -18,7 +18,6 @@ import java.util.*;
  *  survey : 질문마다 판단하는 지표를 담은 1차원 문자열 배열
  *  choices : 검사자가 각 질문마다 선택한 선택지를 담은 1차원 정수 배열
  *  검사자의 성격 유형 검사 결과를 지표 번호 순서대로 return 하도록 하는 solution 함수 완성
- *
  */
 
 public class PersonalityType {
@@ -45,26 +44,12 @@ public class PersonalityType {
 
     private static void scoringByChoice(Map<String, Integer> map, String[] surveySplit, int choice) {
         switch (choice){
-            case 1:
-                map.put(surveySplit[0], map.getOrDefault(surveySplit[0], 0) + 3);
-                break;
-            case 2:
-                map.put(surveySplit[0], map.getOrDefault(surveySplit[0], 0) + 2);
-                break;
-            case 3:
-                map.put(surveySplit[0], map.getOrDefault(surveySplit[0], 0) + 1);
-                break;
-            case 4:
-                break;
-            case 5:
-                map.put(surveySplit[1], map.getOrDefault(surveySplit[1], 0) + 1);
-                break;
-            case 6:
-                map.put(surveySplit[1], map.getOrDefault(surveySplit[1], 0) + 2);
-                break;
-            case 7:
-                map.put(surveySplit[1], map.getOrDefault(surveySplit[1], 0) + 3);
-                break;
+            case 1 -> map.put(surveySplit[0], map.getOrDefault(surveySplit[0], 0) + 3);
+            case 2 -> map.put(surveySplit[0], map.getOrDefault(surveySplit[0], 0) + 2);
+            case 3 -> map.put(surveySplit[0], map.getOrDefault(surveySplit[0], 0) + 1);
+            case 5 -> map.put(surveySplit[1], map.getOrDefault(surveySplit[1], 0) + 1);
+            case 6 -> map.put(surveySplit[1], map.getOrDefault(surveySplit[1], 0) + 2);
+            case 7 -> map.put(surveySplit[1], map.getOrDefault(surveySplit[1], 0) + 3);
         }
     }
 
