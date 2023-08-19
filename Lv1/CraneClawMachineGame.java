@@ -42,13 +42,7 @@ public class CraneClawMachineGame {
         for (int move : moves) {
             for (int i = 0; i < board.length; i++) {
                 if (board[i][move - 1] != 0) {
-                    if (pluckedDoll.empty()) {
-                        pluckedDoll.push(board[i][move - 1]);
-                        board[i][move - 1] = 0;
-                        break;
-                    }
-
-                    if (pluckedDoll.peek().equals(board[i][move - 1])) {
+                    if (!pluckedDoll.empty() && pluckedDoll.peek().equals(board[i][move - 1])) {
                         pluckedDoll.pop();
                         answer += 2;
                     } else {
