@@ -38,7 +38,6 @@ public class FindMaxNum {
     }
 
     public static void main(String[] args) {
-//        int[] numbers = {2, 3, 3, 5};
         int[] numbers = {9, 1, 5, 3, 6, 2};
         FindMaxNum findMaxNum = new FindMaxNum();
         System.out.println(Arrays.toString(findMaxNum.solution(numbers)));
