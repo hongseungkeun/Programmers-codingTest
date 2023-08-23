@@ -64,7 +64,7 @@ public class PressTheKeypad {
     }
 
     private void calculation(int number, String hand) {
-        number = (number == 0) ? ZERO : number;
+        number = number == 0 ? ZERO : number;
 
         int leftDistance = calculateDistance(number, left);
         int rightDistance = calculateDistance(number, right);
