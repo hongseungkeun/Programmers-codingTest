@@ -36,7 +36,7 @@ public class LongJump {
         long f2 = 1L;
 
         for (int i = 1; i < n; i++) {
-            answer = f1 + f2;
+            answer = (f1 + f2) % 1234567;
             f1 = f2;
             f2 = answer;
         }
